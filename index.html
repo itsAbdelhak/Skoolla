@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyGen AI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS with Custom Config -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+              display: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#1e293b', // slate-800
+                light: '#f1f5f9',   // slate-100
+                dark: '#0f172a',    // slate-900
+              },
+              accent: {
+                DEFAULT: '#22C55E', // green-500
+                light: '#F0FDF4',   // green-50
+              },
+              warm: {
+                gray: '#F9FAFB',
+              }
+            },
+            borderRadius: {
+              '2xl': '1rem',
+              '3xl': '1.25rem',
+            },
+            boxShadow: {
+              'subtle': '0 4px 8px rgba(0, 0, 0, 0.05)',
+              'card': '0 4px 12px rgba(0, 0, 0, 0.08)',
+              'card-hover': '0 6px 16px rgba(0, 0, 0, 0.1)',
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.5s ease-out forwards',
+                'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'spin-slow': 'spin 5s linear infinite',
+                'sway': 'sway 2.5s ease-in-out infinite',
+                'blob': 'blob 7s infinite linear',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: 0, transform: 'translateY(10px)' },
+                    '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+                sway: {
+                    '0%, 100%': { transform: 'rotate(-5deg) scale(1.1)' },
+                    '50%': { transform: 'rotate(5deg) scale(1.1)' },
+                },
+                blob: {
+                    '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                    '33%': { transform: 'translate(30px, -50px) scale(1.2)' },
+                    '66%': { transform: 'translate(-20px, 20px) scale(0.8)' },
+                    '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                },
+            }
+          }
+        }
+      }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: false });
+    </script>
+
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.80.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="h-full bg-gradient-to-br from-sky-200 via-sky-100 to-white">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
